@@ -140,3 +140,59 @@ This can be a bit intimidating, but if you follow the steps carefully, you shoul
     Click Add SSH key.
     If prompted, confirm your GitHub password.
     Anywhere in Terminal, type ssh -T git@github.com and if you see "Successfully authenticated" (ignore the rest of the message) you are good to go! If you do not see that, start from the beginning again.
+
+FORKING
+
+On github, click fork on the file you want to fork and github will clone the repository as one of yours. Now you can work on the code all you want and save changes to your version of the repository.
+
+git clone PASTE_URL_HERE
+  Now you can hit the Clone or download button to copy the repository to your local machine. Make sure to use SSH or HTTPS. This is create a folder of the repository name in your directory with git already initialized.
+
+PULL REQUEST
+  Hit create new pull request on github to request to have your code merged into the original repository.
+
+  To get new changes made to the original repository, make sure all your changes are committed, use 
+git remote add upstream git@github.com:rithmschool/learn_forking.git 
+  (or other appropriate url)
+  Now run 
+git pull upstream master 
+  to bring all the changes to the origin upstream. Then merge any conflicts. Now run
+git push origin master
+  to update your forked copy
+
+git pull 
+  Is a combination of git fetch and git merge. If there are branches or you want to pull manually you can run git fetch and git merge.
+
+More info here: https://stackoverflow.com/questions/292357/what-is-the-difference-between-git-pull-and-git-fetch
+
+STASHING
+
+git stash
+  stash your commits (same as git stash save)
+
+git stash list
+  show the list of stashed changes
+
+git stash apply
+  move the latest stashed change back into the working directory, but keep it on the list
+
+git stash pop
+  move the latest stashed change back into the working directory and remove it from the list
+
+git stash show
+  show the latest stash
+
+git stash show stash@{number}
+  show a specific stashed change
+
+REBASING
+  https://www.atlassian.com/git/tutorials/merging-vs-rebasing
+  https://www.rithmschool.com/courses/git/git-github-rebasing
+
+git rebase COMMIT_SHA or HEAD~(LEVELS_BEHIND_HEAD) 
+  Inlines the history behind your current work. See links for more indepth details before using. Also brush up on vi for interactive rebaseing of commits.
+
+REVERTING
+
+git revert COMMIT_SHA or HEAD~(LEVELS_BEHIND_HEAD)
+  This is much safer than git reset for undoing a commit. If you have a commit 3-4 commits back that you reset it will undo all the work since then. Git revert will select that commit and make a new commit with the changed content. This prevents detroying someone elses work or making confusion.
