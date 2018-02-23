@@ -1,6 +1,8 @@
 # RithmSchool-Git
 Notes from Rithm Schools Git Course
 
+BASICS
+
 git init  
   Initializes an empty git repository in the current working folder.
 
@@ -40,3 +42,70 @@ git config --global alias.KEYBOARD_SHORTCUT COMMAND
 git config --global
   Show options on global parameters 
 
+REMOVING AND RESETTING
+
+git checkout NAME_OF_FILE 
+  Removes changes to a file that are untracked. Be careful this cannot be undone
+
+git clean -df 
+  Removes untracked files, also cannot be undone
+
+git rm --cached NAME_OF_FILE
+  Removes staged changes back to the working directory
+
+git reset --hard HEAD
+  Removes all chages from staging area and working directory. Cannot be undone
+
+git reset --soft COMMIT_SHA 
+  Moves the files committed back to the staging area
+
+git reset --mixed COMMIT_SHA 
+  Moves the files committed back to the working directory (if you use git reset without a flag, the default will be --mixed)
+
+git reset --hard COMMIT_SHA 
+  Undoes the entire commit (dangerous!!!)
+
+BRANCHING
+
+git branch 
+  Lists all current branches
+
+git checkout -b NAME_OF_BRANCH
+  Create a new branch
+
+git checkout NAME_OF_BRANCH
+  Moves to branch
+
+git branch -D NAME_OF_BRANCH
+  Deletes the branch, make sure you are not on it currently
+
+MERGING
+
+git merge NAME_OF_BRANCH
+  Merges commits from branch to current working directory. When there are conflicts, open the conflicting file and select what changes you want to keep, then stage and commit the file.
+
+git log --oneline --decorate
+  Should display nice coloring for branches
+
+git diff
+  See changes in the working tree not yet staged for the next commit.
+
+git diff --cached
+  See Changes between the staging area and your last commit.
+
+git diff HEAD
+  See all changes in the working directory since your last commit.
+
+git diff ANOTHER_BRANCH
+  compare with the latest code on another branch
+
+git diff HEAD~1 HEAD
+  compare with the previous commit (add ~2, ~3 for older commits)
+
+REMOTES
+
+git remote add URL_OF_GITHUB_REMOTE
+  Adds a remote github repository
+
+git push origin master
+  Pushes commited changes to the origin (shortcut for remote) from master
