@@ -65,6 +65,9 @@ git reset --mixed COMMIT_SHA
 git reset --hard COMMIT_SHA 
   Undoes the entire commit (dangerous!!!)
 
+git reset --hard origin/master
+  This will reset your local to the head of the remote
+
 BRANCHING
 
 git branch 
