@@ -51,7 +51,7 @@ git clean -df
   Removes untracked files, also cannot be undone
 
 git rm --cached NAME_OF_FILE
-  Removes staged changes back to the working directory
+  Remove files from the working tree and from the stage
 
 git reset --hard HEAD
   Removes all chages from staging area and working directory. Cannot be undone
