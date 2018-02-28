@@ -44,6 +44,9 @@ git config --global
 
 REMOVING AND RESETTING
 
+git reset HEAD NAME_OF_FILE
+  Removes changes from the staging directory to the working directory
+
 git checkout NAME_OF_FILE 
   Removes changes to a file that are untracked. Be careful this cannot be undone
 
