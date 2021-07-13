@@ -42,6 +42,9 @@ git config --global alias.KEYBOARD_SHORTCUT COMMAND
 git config --global
   Show options on global parameters 
 
+git checkout -
+  Checks out your last working branch
+
 REMOVING AND RESETTING
 
 git reset HEAD NAME_OF_FILE
